@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tweets
   resources :users
   get '/users', to: 'users#all'
   get '/users/:id', to: 'users#index'

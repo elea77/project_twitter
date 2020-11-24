@@ -6,9 +6,8 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
 
     # L'utilisateur a plusieurs tweets avec une clé user_id dans la table Tweets
-    has_many :tweets
+    # has_many :tweets
 
 end
 
 user = User.last
-user.tweets
