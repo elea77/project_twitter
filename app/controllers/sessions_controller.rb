@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         email = params[:login][:email]
         password = params[:login][:password]
         user = User.find_by(email: email)
-        ret = user.authenticate(password)
+        ret = user && user.authenticate(password)
         if ret 
             session[:user_token] = user.id.to_s
             redirect_to users_path
@@ -17,7 +17,8 @@ class SessionsController < ApplicationController
     end
 
     def sign_out
-
+        session[:user_token] = nil
+        redirect_to users_path
     end
 
     private

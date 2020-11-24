@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get '/sign_in', to: 'sessions#sign_in_form'
   post '/sign_in', to: 'sessions#sign_in'
+  delete '/sign_out', to: 'sessions#sign_out'
 end
