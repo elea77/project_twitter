@@ -29,7 +29,7 @@ class TweetsController < ApplicationController
 
   def update
     if @tweet.update(tweet_params)
-      redirect_to 'tweets_path'
+      redirect_to tweets_path
     else
       redirect_to tweet_path(@tweet), notice: 'Wrong'
     end
